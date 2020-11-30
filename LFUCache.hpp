@@ -17,9 +17,9 @@ public:
     void addItem(int item);
     int getIndexOfItem(int item);
     void print();
+    ~LFUCache();
 private:
     int *frequency;
-    //void reorder(int index);
 };
 
 #endif /* LFUCache_hpp */

@@ -24,6 +24,7 @@ public:
     virtual int getIndexOfItem(int item)=0;
     virtual void print()=0;
     int getItemAtFront();
+    
 };
 
 #endif /* Cache_hpp */

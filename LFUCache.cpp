@@ -83,42 +83,15 @@ int LFUCache::getIndexOfItem(int item){
     return -1;
 }
 
-/*
- void LFUCache::reorder(int index){
- int newIndex=-1;
- for(int i=0;i<index;++i){
- if(frequency[index]>frequency[i] && i!=index){
- //swap
- int temp=frequency[i];
- frequency[i]=frequency[index];
- frequency[index]=temp;
- //Kepp track of swap location
- newIndex=i;
- }
- }
- 
- if(newIndex!=-1){
- //Swap actual elements
- int temp=dataCache[newIndex];
- dataCache[newIndex]=dataCache[index];
- dataCache[index]=temp;
- }
- 
- }
- */
-/*
- std::ostream& operator<<(std::ostream& fout, const LFUCache &printMe){
- fout<<"Data "<<"|"<<" Frequency"<<std::endl;
- for(int i=0;i<printMe.numItem;++i){
- fout<<printMe.dataCache[i]<<" | "<<printMe.frequency[i]<<std::endl;;
- }
- return fout;
- }
- */
 
 void LFUCache::print(){
     std::cout<<"(Data "<<"|"<<" Frequency)"<<std::endl;
     for(int i=0;i<numItem;++i){
         std::cout<<dataCache[i]<<" | "<<frequency[i]<<std::endl;;
     }
+}
+
+LFUCache::~LFUCache(){
+    delete[] dataCache;
+    delete[] frequency;
 }

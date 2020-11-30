@@ -39,19 +39,6 @@ void LRUCache::addItem(int item){
     }
 }
 
-/*
- //If the array is full
- if(numItem>=size){
- //Delete and scoot
- for(int i=size-1;i>0;--i){
- dataCache[i]=dataCache[i-1];
- }
- dataCache[0]=item;
- return;
- }
- else{
- */
-
 int LRUCache::getIndexOfItem(int item){
     for(int i=0;i<numItem;++i){
         if(item==dataCache[i]){
@@ -61,16 +48,13 @@ int LRUCache::getIndexOfItem(int item){
     return -1;
 }
 
-/*
-std::ostream& operator<<(std::ostream& fout, const LRUCache &printMe){
-    for(int i=0;i<printMe.numItem;++i){
-        fout<<printMe.dataCache[i]<<" ";
-    }
-    return fout;
-}*/
 
 void LRUCache::print(){
     for(int i=0;i<numItem;++i){
         std::cout<<dataCache[i]<<" ";
     }
+}
+
+LRUCache::~LRUCache(){
+    delete[] dataCache;
 }

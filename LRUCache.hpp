@@ -17,6 +17,7 @@ public:
     void addItem(int item);
     int getIndexOfItem(int item);
     void print();
+    ~LRUCache();
     //friend std::ostream& operator<<(std::ostream& fout, const LRUCache &printMe);
 };
 
